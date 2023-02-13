@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'de.arthurpicht'
+version '0.2.2-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    implementation 'com.github.arthurpicht:Barnacle:0.2.2-SNAPSHOT'
+    implementation 'de.arthurpicht:barnacle-generator-test:0.2.2-SNAPSHOT'
+    implementation 'com.github.arthurpicht:utils-core:1.11.0'
+    implementation 'com.github.arthurpicht:utils-io:0.0.17'
+    implementation 'com.h2database:h2:2.1.214'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
