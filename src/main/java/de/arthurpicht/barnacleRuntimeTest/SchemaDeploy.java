@@ -21,7 +21,6 @@ public class SchemaDeploy {
         String dbUrl = "jdbc:h2:./db/" + testCase;
         Path sqlFile = RuntimeTestPaths.getSql(testCase);
 
-
         Connection conn = null;
         try {
             Class.forName(JDBC_DRIVER);

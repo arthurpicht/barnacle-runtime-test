@@ -29,10 +29,9 @@ public class TestCase01 {
     @Test
     @Order(2)
     public void create() throws DataSourceException {
-        PersonVO personVO = new PersonVO("Joe");
-        personVO.setName("Dummy");
-        personVO.setAge(42);
-        personVO.setStreet("Nowhere Ln.");
+        PersonVO personVO = new PersonVO("id-1");
+        personVO.setFirstName("Joe");
+        personVO.setLastName("Dummy");
 
         PersonDAO.create(personVO);
     }
@@ -40,33 +39,29 @@ public class TestCase01 {
     @Test
     @Order(3)
     public void read() throws DataSourceException, EntityNotFoundException {
-        PersonVO personVO = PersonDAO.load("Joe");
+        PersonVO personVO = PersonDAO.load("id-1");
         assertEquals("Joe", personVO.getFirstName());
-        assertEquals("Dummy", personVO.getName());
-        // TODO ...
+        assertEquals("Dummy", personVO.getLastName());
     }
 
     @Test
     @Order(4)
     public void update() throws DataSourceException, EntityNotFoundException {
-        PersonVO personVO = new PersonVO("Joe");
-        personVO.setName("Dummy Dumm");
-        personVO.setAge(99);
-        personVO.setStreet("Highway to hell");
+        PersonVO personVO = PersonDAO.load("id-1");
+        personVO.setLastName("Dummy Dumm");
 
         PersonDAO.update(personVO);
 
-        PersonVO personVOReloaded = PersonDAO.load("Joe");
+        PersonVO personVOReloaded = PersonDAO.load("id-1");
         assertEquals("Joe", personVOReloaded.getFirstName());
-        assertEquals("Dummy Dumm", personVOReloaded.getName());
-        // TODO ...
+        assertEquals("Dummy Dumm", personVOReloaded.getLastName());
     }
 
     @Test
     @Order(5)
     public void delete() throws DataSourceException {
-        PersonDAO.delete("Joe");
-        Assertions.assertThrows(EntityNotFoundException.class, () -> PersonDAO.load("Joe"));
+        PersonDAO.delete("id-1");
+        Assertions.assertThrows(EntityNotFoundException.class, () -> PersonDAO.load("id-1"));
     }
 
 }
