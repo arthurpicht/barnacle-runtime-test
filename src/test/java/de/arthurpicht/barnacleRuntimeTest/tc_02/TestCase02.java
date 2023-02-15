@@ -24,7 +24,7 @@ public class TestCase02 {
     @Test
     @Order(1)
     public void deploySchema() {
-        SchemaDeploy.deploy("tc_02");
+        SchemaDeploy.deploy(testCaseId);
     }
 
     @Test
