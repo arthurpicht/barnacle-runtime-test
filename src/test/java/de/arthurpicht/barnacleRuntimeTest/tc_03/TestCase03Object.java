@@ -1,4 +1,4 @@
-package de.arthurpicht.barnacleRuntimeTest.tc_03.tc_03;
+package de.arthurpicht.barnacleRuntimeTest.tc_03;
 
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.DataSourceException;
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.EntityNotFoundException;
