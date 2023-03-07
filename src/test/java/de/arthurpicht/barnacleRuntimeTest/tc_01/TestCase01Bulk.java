@@ -1,7 +1,6 @@
 package de.arthurpicht.barnacleRuntimeTest.tc_01;
 
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.DataSourceException;
-import de.arthurpicht.barnacleGeneratorTest.connectionManager.EntityNotFoundException;
 import de.arthurpicht.barnacleGeneratorTest.tc_01.persistence.dao.PersonDAO;
 import de.arthurpicht.barnacleGeneratorTest.tc_01.persistence.vo.PersonVO;
 import de.arthurpicht.barnacleRuntimeTest.CleanUp;
