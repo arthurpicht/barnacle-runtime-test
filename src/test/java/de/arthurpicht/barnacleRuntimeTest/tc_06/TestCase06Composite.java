@@ -1,12 +1,13 @@
-package de.arthurpicht.barnacleRuntimeTest.tc_05;
+package de.arthurpicht.barnacleRuntimeTest.tc_06;
 
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.DataSourceException;
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.EntityNotFoundException;
-import de.arthurpicht.barnacleGeneratorTest.tc_05.persistence.dao.AddressCompositeDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_05.persistence.dao.AddressDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_05.persistence.dao.UserCompositeDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_05.persistence.dao.UserDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_05.persistence.vo.*;
+import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.dao.AddressCompositeDAO;
+import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.dao.UserCompositeDAO;
+import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.vo.AddressCompositePK;
+import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.vo.AddressCompositeVO;
+import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.vo.UserCompositePK;
+import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.vo.UserCompositeVO;
 import de.arthurpicht.barnacleRuntimeTest.CleanUp;
 import de.arthurpicht.barnacleRuntimeTest.SchemaDeploy;
 import org.junit.jupiter.api.*;
@@ -16,9 +17,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestCase05Composite {
+public class TestCase06Composite {
 
-    private static final String testCaseId = "tc_05";
+    private static final String testCaseId = "tc_06";
 
     @BeforeAll
     public static void prepare() {
