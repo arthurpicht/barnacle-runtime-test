@@ -10,7 +10,7 @@ public class RuntimeTestPaths {
     }
 
     public static Path getDb(String testCaseId) {
-        return Paths.get("db/" + testCaseId);
+        return Paths.get("db/" + testCaseId + ".mv.db");
     }
 
 }
