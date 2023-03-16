@@ -1,35 +1,24 @@
-package de.arthurpicht.barnacleRuntimeTest.tc_08;
+package de.arthurpicht.barnacleRuntimeTest.tg_02.tc_04;
 
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.DataSourceException;
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.EntityNotFoundException;
-import de.arthurpicht.barnacleGeneratorTest.tc_08.persistence.dao.GarmentCompositeDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_08.persistence.dao.PersonCompositeDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_08.persistence.vo.GarmentCompositePK;
-import de.arthurpicht.barnacleGeneratorTest.tc_08.persistence.vo.GarmentCompositeVO;
-import de.arthurpicht.barnacleGeneratorTest.tc_08.persistence.vo.PersonCompositeVO;
-import de.arthurpicht.barnacleRuntimeTest.CleanUp;
-import de.arthurpicht.barnacleRuntimeTest.SchemaDeploy;
-import org.junit.jupiter.api.*;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_04.persistence.dao.GarmentCompositeDAO;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_04.persistence.dao.PersonCompositeDAO;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_04.persistence.vo.GarmentCompositePK;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_04.persistence.vo.GarmentCompositeVO;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_04.persistence.vo.PersonCompositeVO;
+import de.arthurpicht.barnacleRuntimeTest.TestCaseBase;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestCase08 {
-
-    private static final String testCaseId = "tc_08";
-
-    @BeforeAll
-    public static void prepare() {
-        CleanUp.exec(testCaseId);
-    }
-
-    @Test
-    @Order(1)
-    public void deploySchema() {
-        SchemaDeploy.deploy(testCaseId);
-    }
+public class TestCase0204 extends TestCaseBase {
 
     @Test
     @Order(2)

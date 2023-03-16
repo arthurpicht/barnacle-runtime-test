@@ -16,10 +16,10 @@ public class SchemaDeploy {
     static final String PASS = "sa";
 
 
-    public static void deploy(String testCase) {
+    public static void deploy(String testGroupId, String testCaseId) {
 
-        String dbUrl = "jdbc:h2:./db/" + testCase;
-        Path sqlFile = RuntimeTestPaths.getSql(testCase);
+        String dbUrl = "jdbc:h2:./db/" + testGroupId + "_" + testCaseId;
+        Path sqlFile = RuntimeTestPaths.getSql(testGroupId, testCaseId);
 
         Connection conn = null;
         try {

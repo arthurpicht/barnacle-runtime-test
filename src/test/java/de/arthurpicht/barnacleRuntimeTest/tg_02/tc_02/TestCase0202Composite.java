@@ -1,36 +1,25 @@
-package de.arthurpicht.barnacleRuntimeTest.tc_06;
+package de.arthurpicht.barnacleRuntimeTest.tg_02.tc_02;
 
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.DataSourceException;
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.EntityNotFoundException;
-import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.dao.AddressCompositeDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.dao.UserCompositeDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.vo.AddressCompositePK;
-import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.vo.AddressCompositeVO;
-import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.vo.UserCompositePK;
-import de.arthurpicht.barnacleGeneratorTest.tc_06.persistence.vo.UserCompositeVO;
-import de.arthurpicht.barnacleRuntimeTest.CleanUp;
-import de.arthurpicht.barnacleRuntimeTest.SchemaDeploy;
-import org.junit.jupiter.api.*;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_02.persistence.dao.AddressCompositeDAO;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_02.persistence.dao.UserCompositeDAO;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_02.persistence.vo.AddressCompositePK;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_02.persistence.vo.AddressCompositeVO;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_02.persistence.vo.UserCompositePK;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_02.persistence.vo.UserCompositeVO;
+import de.arthurpicht.barnacleRuntimeTest.TestCaseBase;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestCase06Composite {
-
-    private static final String testCaseId = "tc_06";
-
-    @BeforeAll
-    public static void prepare() {
-        CleanUp.exec(testCaseId);
-    }
-
-    @Test
-    @Order(1)
-    public void deploySchema() {
-        SchemaDeploy.deploy(testCaseId);
-    }
+public class TestCase0202Composite extends TestCaseBase {
 
     @Test
     @Order(2)

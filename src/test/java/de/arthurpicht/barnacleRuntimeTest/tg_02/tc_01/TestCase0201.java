@@ -1,37 +1,23 @@
-package de.arthurpicht.barnacleRuntimeTest.tc_05;
+package de.arthurpicht.barnacleRuntimeTest.tg_02.tc_01;
 
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.DataSourceException;
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.EntityNotFoundException;
-import de.arthurpicht.barnacleGeneratorTest.tc_04.persistence.dao.AutoIncDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_04.persistence.vo.AutoIncVO;
-import de.arthurpicht.barnacleGeneratorTest.tc_05.persistence.dao.AddressDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_05.persistence.dao.UserDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_05.persistence.vo.AddressVO;
-import de.arthurpicht.barnacleGeneratorTest.tc_05.persistence.vo.UserVO;
-import de.arthurpicht.barnacleRuntimeTest.CleanUp;
-import de.arthurpicht.barnacleRuntimeTest.SchemaDeploy;
-import org.junit.jupiter.api.*;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_01.persistence.dao.AddressDAO;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_01.persistence.dao.UserDAO;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_01.persistence.vo.AddressVO;
+import de.arthurpicht.barnacleGeneratorTest.tg_02.tc_01.persistence.vo.UserVO;
+import de.arthurpicht.barnacleRuntimeTest.TestCaseBase;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestCase05 {
-
-    private static final String testCaseId = "tc_05";
-
-    @BeforeAll
-    public static void prepare() {
-        CleanUp.exec(testCaseId);
-    }
-
-    @Test
-    @Order(1)
-    public void deploySchema() {
-        SchemaDeploy.deploy(testCaseId);
-    }
+public class TestCase0201 extends TestCaseBase {
 
     @Test
     @Order(2)

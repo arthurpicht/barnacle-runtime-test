@@ -1,12 +1,14 @@
-package de.arthurpicht.barnacleRuntimeTest.tc_02;
+package de.arthurpicht.barnacleRuntimeTest.tg_01.tc_02;
 
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.DataSourceException;
-import de.arthurpicht.barnacleGeneratorTest.tc_02.persistence.dao.PersonCompositeDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_02.persistence.vo.PersonCompositePK;
-import de.arthurpicht.barnacleGeneratorTest.tc_02.persistence.vo.PersonCompositeVO;
-import de.arthurpicht.barnacleRuntimeTest.CleanUp;
-import de.arthurpicht.barnacleRuntimeTest.SchemaDeploy;
-import org.junit.jupiter.api.*;
+import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_02.persistence.dao.PersonCompositeDAO;
+import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_02.persistence.vo.PersonCompositePK;
+import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_02.persistence.vo.PersonCompositeVO;
+import de.arthurpicht.barnacleRuntimeTest.TestCaseBase;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,20 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestCase02Bulk {
-
-    private static final String testCaseId = "tc_02";
-
-    @BeforeAll
-    public static void prepare() {
-        CleanUp.exec(testCaseId);
-    }
-
-    @Test
-    @Order(1)
-    public void deploySchema() {
-        SchemaDeploy.deploy(testCaseId);
-    }
+public class TestCase0102Bulk extends TestCaseBase {
 
     @Test
     @Order(2)

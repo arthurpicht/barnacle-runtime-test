@@ -1,30 +1,16 @@
-package de.arthurpicht.barnacleRuntimeTest.tc_03;
+package de.arthurpicht.barnacleRuntimeTest.tg_01.tc_03;
 
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.DataSourceException;
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.EntityNotFoundException;
-import de.arthurpicht.barnacleGeneratorTest.tc_03.persistence.dao.BasicTypesDAO;
-import de.arthurpicht.barnacleGeneratorTest.tc_03.persistence.vo.BasicTypesVO;
-import de.arthurpicht.barnacleRuntimeTest.CleanUp;
-import de.arthurpicht.barnacleRuntimeTest.SchemaDeploy;
+import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_03.persistence.dao.BasicTypesDAO;
+import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_03.persistence.vo.BasicTypesVO;
+import de.arthurpicht.barnacleRuntimeTest.TestCaseBase;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestCase03Basic {
-
-    private static final String testCaseId = "tc_03";
-
-    @BeforeAll
-    public static void prepare() {
-        CleanUp.exec(testCaseId);
-    }
-
-    @Test
-    @Order(1)
-    public void deploySchema() {
-        SchemaDeploy.deploy(testCaseId);
-    }
+public class TestCase0103Basic extends TestCaseBase {
 
     @Test
     @Order(2)
