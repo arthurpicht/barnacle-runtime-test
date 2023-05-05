@@ -1,4 +1,5 @@
 rootProject.name = 'barnacle-runtime-test'
 includeBuild('../Barnacle')
 includeBuild('../barnacle-generator-test')
+includeBuild('../utils-test')
 

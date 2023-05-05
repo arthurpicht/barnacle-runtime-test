@@ -1,7 +1,8 @@
 package de.arthurpicht.barnacleRuntimeTest;
 
-import de.arthurpicht.barnacleGeneratorTest.utils.TestIds;
 import org.junit.jupiter.api.*;
+import de.arthurpicht.utils.test.TestIds;
+
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
