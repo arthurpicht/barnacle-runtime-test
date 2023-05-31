@@ -12,7 +12,8 @@ public abstract class TestCaseBase {
     public void prepare() {
         String testGroupId = TestIds.getTestGroupId(this);
         String testCaseId = TestIds.getTestCaseId(this);
-        CleanUp.exec(testGroupId, testCaseId);
+        if (TestConfiguration.cleanUpAndDeployBeforeEachTestCase)
+            CleanUp.exec(testGroupId, testCaseId);
     }
 
     @Test
@@ -20,7 +21,8 @@ public abstract class TestCaseBase {
     public void deploySchema() {
         String testGroupId = TestIds.getTestGroupId(this);
         String testCaseId = TestIds.getTestCaseId(this);
-        SchemaDeploy.deploy(testGroupId, testCaseId);
+        if (TestConfiguration.cleanUpAndDeployBeforeEachTestCase)
+            SchemaDeploy.deploy(testGroupId, testCaseId);
     }
 
 }

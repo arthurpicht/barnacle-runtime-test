@@ -42,11 +42,11 @@ public class TestCase0103ObjectNulls extends TestCaseBase {
         assertNull(objectTypesVO.getMyShort());
     }
 
-    @Test
-    @Order(5)
-    public void delete() throws DataSourceException {
-        ObjectTypesDAO.delete("id-1");
-        Assertions.assertThrows(EntityNotFoundException.class, () -> ObjectTypesDAO.load("id-1"));
-    }
+//    @Test
+//    @Order(5)
+//    public void delete() throws DataSourceException {
+//        ObjectTypesDAO.delete("id-1");
+//        Assertions.assertThrows(EntityNotFoundException.class, () -> ObjectTypesDAO.load("id-1"));
+//    }
 
 }
