@@ -58,7 +58,7 @@ public class TestCase0103ObjectNullsUpdate extends TestCaseBase {
         ObjectTypesDAO.update(objectTypesVO);
 
         ObjectTypesVO objectTypesVOReloaded = ObjectTypesDAO.load("id-1");
-        assertFalse(objectTypesVOReloaded.getMyBoolean());
+        assertNull(objectTypesVOReloaded.getMyBoolean());
         assertNull(objectTypesVOReloaded.getMyInt());
         assertNull(objectTypesVOReloaded.getMyLong());
         assertNull(objectTypesVOReloaded.getMyFloat());

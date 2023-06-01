@@ -7,6 +7,8 @@ import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_03.persistence.vo.ObjectTyp
 import de.arthurpicht.barnacleRuntimeTest.TestCaseBase;
 import org.junit.jupiter.api.*;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -33,7 +35,7 @@ public class TestCase0103ObjectNulls extends TestCaseBase {
         ObjectTypesVO objectTypesVO = ObjectTypesDAO.load("id-1");
 
         assertEquals("id-1", objectTypesVO.getId());
-        assertFalse(objectTypesVO.getMyBoolean());
+        assertNull(objectTypesVO.getMyBoolean());
         assertNull(objectTypesVO.getMyInt());
         assertNull(objectTypesVO.getMyLong());
         assertNull(objectTypesVO.getMyFloat());
@@ -42,11 +44,28 @@ public class TestCase0103ObjectNulls extends TestCaseBase {
         assertNull(objectTypesVO.getMyShort());
     }
 
-//    @Test
-//    @Order(5)
-//    public void delete() throws DataSourceException {
-//        ObjectTypesDAO.delete("id-1");
-//        Assertions.assertThrows(EntityNotFoundException.class, () -> ObjectTypesDAO.load("id-1"));
-//    }
+    @Test
+    @Order(4)
+    public void findAll() throws DataSourceException {
+        List<ObjectTypesVO> objectTypesVOList = ObjectTypesDAO.findAll();
+
+        assertEquals(1, objectTypesVOList.size());
+
+        ObjectTypesVO objectTypesVO = objectTypesVOList.get(0);
+        assertNull(objectTypesVO.getMyBoolean());
+        assertNull(objectTypesVO.getMyInt());
+        assertNull(objectTypesVO.getMyLong());
+        assertNull(objectTypesVO.getMyFloat());
+        assertNull(objectTypesVO.getMyDouble());
+        assertNull(objectTypesVO.getMyByte());
+        assertNull(objectTypesVO.getMyShort());
+    }
+
+    @Test
+    @Order(5)
+    public void delete() throws DataSourceException {
+        ObjectTypesDAO.delete("id-1");
+        Assertions.assertThrows(EntityNotFoundException.class, () -> ObjectTypesDAO.load("id-1"));
+    }
 
 }

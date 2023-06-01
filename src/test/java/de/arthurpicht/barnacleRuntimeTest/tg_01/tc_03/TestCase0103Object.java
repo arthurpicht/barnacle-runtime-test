@@ -7,6 +7,8 @@ import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_03.persistence.vo.ObjectTyp
 import de.arthurpicht.barnacleRuntimeTest.TestCaseBase;
 import org.junit.jupiter.api.*;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -69,6 +71,23 @@ public class TestCase0103Object extends TestCaseBase {
 
     @Test
     @Order(5)
+    public void findAll() throws DataSourceException {
+        List<ObjectTypesVO> objectTypesVOList = ObjectTypesDAO.findAll();
+
+        assertEquals(1, objectTypesVOList.size());
+
+        ObjectTypesVO objectTypesVO = objectTypesVOList.get(0);
+        assertFalse(objectTypesVO.getMyBoolean());
+        assertEquals(77, objectTypesVO.getMyInt());
+        assertEquals(56789L, objectTypesVO.getMyLong());
+        assertEquals(5.6789F, objectTypesVO.getMyFloat());
+        assertEquals(5.6789D, objectTypesVO.getMyDouble());
+        assertEquals((byte)5, objectTypesVO.getMyByte());
+        assertEquals((short)77, objectTypesVO.getMyShort());
+    }
+
+    @Test
+    @Order(6)
     public void delete() throws DataSourceException {
         ObjectTypesDAO.delete("id-1");
         Assertions.assertThrows(EntityNotFoundException.class, () -> ObjectTypesDAO.load("id-1"));

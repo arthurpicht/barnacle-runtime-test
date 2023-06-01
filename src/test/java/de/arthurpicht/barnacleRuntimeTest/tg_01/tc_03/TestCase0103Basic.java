@@ -3,9 +3,13 @@ package de.arthurpicht.barnacleRuntimeTest.tg_01.tc_03;
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.DataSourceException;
 import de.arthurpicht.barnacleGeneratorTest.connectionManager.EntityNotFoundException;
 import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_03.persistence.dao.BasicTypesDAO;
+import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_03.persistence.dao.ObjectTypesDAO;
 import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_03.persistence.vo.BasicTypesVO;
+import de.arthurpicht.barnacleGeneratorTest.tg_01.tc_03.persistence.vo.ObjectTypesVO;
 import de.arthurpicht.barnacleRuntimeTest.TestCaseBase;
 import org.junit.jupiter.api.*;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -70,6 +74,23 @@ public class TestCase0103Basic extends TestCaseBase {
 
     @Test
     @Order(5)
+    public void findAll() throws DataSourceException {
+        List<BasicTypesVO> basicTypesVOList = BasicTypesDAO.findAll();
+
+        assertEquals(1, basicTypesVOList.size());
+
+        BasicTypesVO basicTypesVO = basicTypesVOList.get(0);
+        assertFalse(basicTypesVO.getMyBoolean());
+        assertEquals(77, basicTypesVO.getMyInt());
+        assertEquals(56789L, basicTypesVO.getMyLong());
+        assertEquals(5.6789F, basicTypesVO.getMyFloat());
+        assertEquals(5.6789D, basicTypesVO.getMyDouble());
+        assertEquals((byte)5, basicTypesVO.getMyByte());
+        assertEquals((short)77, basicTypesVO.getMyShort());
+    }
+
+    @Test
+    @Order(6)
     public void delete() throws DataSourceException {
         BasicTypesDAO.delete("id-1");
         Assertions.assertThrows(EntityNotFoundException.class, () -> BasicTypesDAO.load("id-1"));
